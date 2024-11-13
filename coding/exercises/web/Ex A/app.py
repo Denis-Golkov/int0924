@@ -8,7 +8,7 @@ def get_time():
     time_now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     return {'time': time_now}    
 
-
+ 
 @app.route('/clock')
 def clock():
     return render_template('clock.html')
