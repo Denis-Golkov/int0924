@@ -14,7 +14,8 @@ pipeline{
                     cleanWs()
                     echo "Workspace cleaned."
                     sh """
-                    sudo docker rm -f $(sudo docker ps -a -q)
+                    set -e
+                    sudo docker ps -a -q | xargs -r sudo docker rm -f
                     """
                 }
                 echo "Docker containers removed."
